@@ -7,10 +7,12 @@ const bodyParser = require('body-parser');
 const MongoClient = require('mongoose');
 
 const appRoutes = require('./routes/app');
+const messageRoutes = require('./routes/messages');
+// const appRoutes = require('./routes/app');
 
 const app = express();
 
-MongoClient.connect('mongodb://127.0.0.1:27017/test', {
+MongoClient.connect('mongodb://127.0.0.1:27017/node-angular', {
     useCreateIndex: true,
     useNewUrlParser: true
 });
@@ -34,6 +36,7 @@ app.use(function (req, res, next) {
     next();
 });
 
+app.use('/message', messageRoutes);
 app.use('/', appRoutes);
 
 // catch 404 and forward to error handler

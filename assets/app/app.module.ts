@@ -2,13 +2,18 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from "./app.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MessageComponent} from "./messages/message.component";
 import {MessageListComponent} from "./messages/message-list.component";
 import {MessageInputComponent} from "./messages/message-input.component";
 import {MessagesComponent} from "./messages/messages.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
 import {HederComponent} from "./heder.component";
+import {routing} from "./app.routing";
+import {LogoutComponent} from "./auth/logout.component";
+import {SigninComponent} from "./auth/signin.component";
+import {SignupComponent} from "./auth/signup.component";
+import {HttpModule} from "@angular/http";
 
 @NgModule({
     declarations: [
@@ -18,9 +23,12 @@ import {HederComponent} from "./heder.component";
         MessageInputComponent,
         MessagesComponent,
         AuthenticationComponent,
-        HederComponent
+        HederComponent,
+        LogoutComponent,
+        SigninComponent,
+        SignupComponent
     ],
-    imports: [BrowserModule, FormsModule],
+    imports: [BrowserModule, FormsModule, routing, ReactiveFormsModule, HttpModule],
     bootstrap: [AppComponent]
 })
 export class AppModule {

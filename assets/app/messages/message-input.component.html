@@ -2,7 +2,7 @@
     <form (ngSubmit)="onSubmit(f)" #f="ngForm">
         <div class="form-group">
             <label for="content"></label>
-            <input ngModel
+            <input [ngModel]="message?.content"
                    name="content"
                    class="form-control"
                    type="text"
@@ -10,6 +10,7 @@
                    required
             >
         </div>
+        <button (click)="onClear(f)" class="btn btn-danger" type="button">Cancel</button>
         <button [disabled]="f.invalid" class="btn btn-primary" type="submit">Save</button>
     </form>
 </div>
