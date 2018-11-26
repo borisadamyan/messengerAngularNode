@@ -21,17 +21,17 @@ import {MessageService} from "./message.service";
     `]
 })
 export class MessageComponent {
-    @Input() message: Message;
+   @Input() message: Message;
 
 
-    constructor(private messageService: MessageService) {
-    }
+   constructor(private messageService: MessageService){}
 
-    onEdit() {
+    onEdit(){
         this.messageService.editMessage(this.message)
     }
-
-    onDelete() {
-        this.messageService.deleteMessage(this.message)
+    onDelete(){
+        this.messageService.deleteMessage(this.message).subscribe(data => {
+            console.log(data);
+        })
     }
 }

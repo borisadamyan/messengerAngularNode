@@ -11,6 +11,7 @@ export class MessageService {
     private messages: Message[] = [];
     messageIsEdit = new EventEmitter<Message>();
 
+
     constructor(private http: Http) {
     }
 
@@ -56,8 +57,11 @@ export class MessageService {
     }
 
     deleteMessage(message: Message) {
-        this.messages.splice(this.messages.indexOf(message), 1);
         console.log(this.messages);
-        console.log(this.messages.indexOf(message));
+        const body = JSON.stringify(message);
+        this.messages.splice(this.messages.indexOf(message), 1);
+        return this.http.delete('http://localhost:3000/message/' + message.messageId)
+            .map((response: Response) => response.json())
+            .catch((error: Response) => Observable.throw(error.json()));
     }
 }

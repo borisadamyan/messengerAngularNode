@@ -68,4 +68,29 @@ router.patch('/:id', function (req, res, next) {
         })
     });
 });
+
+
+router.delete('/:id', function (req, res, next) {
+    Message.findByIdAndRemove({_id: req.params.id}, function (err, message) {
+        if (err) {
+            return res.status(500).json({
+                title: 'An error occurred',
+                error: err
+            })
+        };
+        if (!message) {
+            return res.status(500).json({
+                title: 'No message Found!',
+                error: {message: 'Message Not Found!'}
+            })
+        }else{
+            return res.status(200).json({
+                title: 'Deleted',
+                obj: message
+            })
+        }
+
+    });
+});
+
 module.exports = router;
