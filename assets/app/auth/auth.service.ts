@@ -20,4 +20,11 @@ export class AuthService {
         const headers = new Headers({'Content-type': 'application/json'});
         return this.http.post('http://localhost:3000/user/signin', user, {headers: headers})
     }
+
+    logout(){
+        localStorage.clear();
+    }
+    isLoggedIn(){
+        return localStorage.getItem('token') !== null;
+    }
 }
