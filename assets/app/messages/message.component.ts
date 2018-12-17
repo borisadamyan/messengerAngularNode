@@ -21,17 +21,25 @@ import {MessageService} from "./message.service";
     `]
 })
 export class MessageComponent {
-   @Input() message: Message;
+    @Input() message: Message;
 
 
-   constructor(private messageService: MessageService){}
+    constructor(private messageService: MessageService) {
+    }
 
-    onEdit(){
+    onEdit() {
         this.messageService.editMessage(this.message)
     }
-    onDelete(){
+
+    onDelete() {
+        console.log(this.message);
         this.messageService.deleteMessage(this.message).subscribe(data => {
             console.log(data);
         })
     }
+
+    belongsToUser() {
+        return localStorage.getItem('userId') == this.message.userId
+    }
+
 }

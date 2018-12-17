@@ -26,6 +26,7 @@ export class SigninComponent implements OnInit {
                 this.myForm.value.email,
                 this.myForm.value.password
         );
+        console.log(user);
         this.authService.signIn(user).subscribe(
             data => {
                 console.log(data);
