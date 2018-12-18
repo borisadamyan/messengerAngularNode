@@ -5,7 +5,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
 router.post('/', function (req, res, next) {
-    console.log(req.body);
+    // console.log(req.body);
     let user = new User({
         email: req.body.email,
         firstName: req.body.firstName,
