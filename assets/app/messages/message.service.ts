@@ -11,7 +11,8 @@ export class MessageService {
 
     private messages: Message[] = [];
     messageIsEdit = new EventEmitter<Message>();
-
+    serverUrl = 'https://mean-node-app.herokuapp.com';
+    localServerUrl = 'http://localhost:3000';
 
     constructor(private http: Http, private errorService: ErrorService) {
     }
@@ -23,7 +24,7 @@ export class MessageService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.post('http://localhost:3000/message' + token, message, {headers: headers})
+        return this.http.post(this.serverUrl + '/message' + token, message, {headers: headers})
             .map((response: Response) => {
                 const result = response.json();
                 console.log(result);
@@ -43,7 +44,7 @@ export class MessageService {
     }
 
     getMessage() {
-        return this.http.get('http://localhost:3000/message')
+        return this.http.get(this.serverUrl + '/message')
             .map((response: Response) => {
                 const messages = response.json().obj;
                 let transformedMessages: Message[] = [];
@@ -75,7 +76,7 @@ export class MessageService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.patch('http://localhost:3000/message/' + message.messageId + token, message, {headers: headers})
+        return this.http.patch(this.serverUrl + '/message/' + message.messageId + token, message, {headers: headers})
             .map((response: Response) => response.json())
             .catch((error: Response) => {
             console.log('update');
@@ -93,7 +94,7 @@ export class MessageService {
         const token = localStorage.getItem('token')
             ? '?token=' + localStorage.getItem('token')
             : '';
-        return this.http.delete('http://localhost:3000/message/' + message.messageId + token)
+        return this.http.delete(this.serverUrl + '/message/' + message.messageId + token)
             .map((response: Response) => response.json())
             .catch((error: Response) => {
             console.log('delete');
