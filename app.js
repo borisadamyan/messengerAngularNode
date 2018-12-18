@@ -13,7 +13,11 @@ const userRoutes = require('./routes/user');
 
 const app = express();
 
-MongoClient.connect('mongodb://127.0.0.1:27017/node-angular', {
+// MongoClient.connect('mongodb://127.0.0.1:27017/node-angular', {
+//     useCreateIndex: true,
+//     useNewUrlParser: true
+// });
+MongoClient.connect('mongodb://test-user:testpass1@ds137634.mlab.com:37634/angular-node', {
     useCreateIndex: true,
     useNewUrlParser: true
 });
