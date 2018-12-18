@@ -1,8 +1,9 @@
 {
-  "name": "mean-nodejs-angular2",
+  "name": "mean-node-angular-app",
   "version": "1.0.0",
-  "private": true,
+  "description": "",
   "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon ./bin/www",
     "build": "del-cli public/js/app && webpack --config webpack.config.dev.js --progress --profile --watch",
     "build:prod": "del-cli public/js/app && ngc -p tsconfig.aot.json && ngc -p tsconfig.aot.json && webpack --config webpack.config.prod.js --progress --profile --bail && del-cli 'public/js/app/**/*.js' 'public/js/app/**/*.js.map' '!public/js/app/bundle.js' '!public/js/app/*.chunk.js' 'assets/app/**/*.ngfactory.ts' 'assets/app/**/*.shim.ts' 'assets/app/**/*.ngsummary.json' 'assets/app/**/*.ngstyle.ts'"
@@ -52,5 +53,15 @@
     "typescript": "^2.1.4",
     "webpack": "^2.2.1",
     "webpack-merge": "^4.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/borisadamyan/messengerAngularNode.git"
+  },
+  "author": "Boramos Boris Adamyan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/borisadamyan/messengerAngularNode/issues"
+  },
+  "homepage": "https://github.com/borisadamyan/messengerAngularNode#readme"
 }
