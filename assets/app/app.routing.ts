@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from "@angular/router";
 import {MessagesComponent} from "./messages/messages.component";
 import {AuthenticationComponent} from "./auth/authentication.component";
-import {AUTH_ROUTS} from "./auth/auth.routing";
+
 
 const APP_ROUTES: Routes = [
     {path: '', redirectTo: '/messages', pathMatch: 'full'},

@@ -4,6 +4,7 @@ import {EventEmitter, Injectable} from "@angular/core";
 import 'rxjs/Rx';
 import {Observable} from "rxjs/Observable";
 import {ErrorService} from "../errors/error.service";
+import { Headers } from '@angular/http';
 
 
 @Injectable()
