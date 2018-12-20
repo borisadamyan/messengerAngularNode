@@ -13,7 +13,6 @@
     "example",
     "heroku"
   ],
-
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
@@ -48,7 +47,6 @@
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.25",
-    "@types/core-js": "^0.9.35",
     "@types/es6-promise": "^3.3.0",
     "@types/node": "^8.10.39",
     "@types/npm": "^2.0.29",
