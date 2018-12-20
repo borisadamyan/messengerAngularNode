@@ -9,7 +9,10 @@
     ],
     "lib": [
       "es5",
-      "dom"
+      "es2015",
+      "es2017",
+      "dom",
+      "scripthost"
     ]
   }
 }

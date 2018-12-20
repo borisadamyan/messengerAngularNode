@@ -1,8 +1,8 @@
-import {Message} from "./message.model";
 import {Http, Response} from "@angular/http";
 import {EventEmitter, Injectable} from "@angular/core";
-import 'rxjs/Rx';
 import {Observable} from "rxjs/Observable";
+import 'rxjs/Rx';
+import {Message} from "./message.model";
 import {ErrorService} from "../errors/error.service";
 import { Headers } from '@angular/http';
 

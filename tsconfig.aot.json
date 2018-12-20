@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es6",
     "module": "es2015",
     "moduleResolution": "node",
     "sourceMap": false,
@@ -15,7 +15,11 @@
   ],
   "lib": [
     "es5",
-    "dom"
+    "es6",
+    "es2015",
+    "es2017",
+    "dom",
+    "scripthost"
   ],
   "angularCompilerOptions": {
     "skipMetadataEmit": true
